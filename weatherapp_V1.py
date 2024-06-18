@@ -1,6 +1,6 @@
 import requests 
 
-api_key = "YOUR API KEY"
+api_key = "YOUR API KEY" # API key from openweathermap,org
 
 location = input("Location: ")
 units = input("Imperial (i) or Metrics (m): ")
