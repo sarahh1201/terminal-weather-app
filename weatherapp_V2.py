@@ -1,5 +1,7 @@
 import requests
 
+# API is from https://www.weatherapi.com
+
 def get_weather(api_key, city):
     url = f"http://api.weatherapi.com/v1/forecast.json?key={api_key}&q={city}" 
     response = requests.get(url)
@@ -41,13 +43,14 @@ def display_weather(weather_data, temp_units):
 
 def main():
         api_key = 'YOUR API KEY'  # API key from weatherapi.com
-    city = input("Enter city name: ")
-    temp_units = input("Metric (m), imperial (i) or kelvin (k): ")
-    weather_data = get_weather(api_key, city)
-    if weather_data:
-        display_weather(weather_data, temp_units)
-    else:
-        print(f"Failed to retrieve weather data for {city}.")
+        city = input("Enter city name: ")
+        temp_units = input("Metric (m), imperial (i) or kelvin (k): ")
+        weather_data = get_weather(api_key, city)
+    
+        if weather_data:
+            display_weather(weather_data, temp_units)
+        else:
+            print(f"Failed to retrieve weather data for {city}.")
 
 if __name__ == "__main__":
     main()
